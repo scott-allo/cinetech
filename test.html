@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cinetech - Accueil" />
+    <meta name="author" content="Cinetech Team" />
+    <meta name="keywords" content="Cinetech, films, séries, streaming" />
+    <title>Cinetech</title>
+
+    <!--------- CSS --------->
+    <link rel="stylesheet" href="global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00FFC2",
+              secondary: "#FF3C87",
+              dark: "#121212",
+              surface: "#1E1E1E",
+              accent: "#F5F5F5",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--------- JS --------->
+  </head>
+  <body class="bg-dark text-accent font-sans">
+    <header class="bg-surface shadow-md">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between p-4"
+      >
+        <h1 class="text-3xl font-bold text-primary">Cinetech</h1>
+        <nav class="flex flex-wrap gap-6 mt-4 md:mt-0 text-lg">
+          <a href="pages/movies.html" class="hover:text-secondary transition"
+            >Films</a
+          >
+          <a href="pages/series.html" class="hover:text-secondary transition"
+            >Séries</a
+          >
+          <a href="pages/favorites.html" class="hover:text-secondary transition"
+            >Mes Favoris</a
+          >
+        </nav>
+        <div class="relative mt-4 md:mt-0">
+          <input
+            type="text"
+            id="search"
+            placeholder="Rechercher..."
+            class="px-4 py-2 rounded-lg bg-accent text-dark w-56 placeholder:text-surface"
+          />
+          <div
+            id="suggestions"
+            class="absolute bg-white text-black w-full mt-1 rounded shadow z-10"
+          ></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl font-semibold mb-6 text-primary">
+        Bienvenue sur Cinetech
+      </h1>
+      <p class="text-lg text-secondary">
+        Découvrez les meilleurs films et séries avec une interface moderne et
+        stylisée.
+      </p>
+
+      <div id="movies-list flex-col"></div>
+    </main>
+
+    <footer
+      class="bg-surface text-accent text-center py-6 border-t border-gray-700"
+    >
+      <div class="container mx-auto">
+        <p class="mb-0 text-sm">&copy; 2025 Cinetech. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>
