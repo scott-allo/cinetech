@@ -14,13 +14,14 @@ async function displayMovies(page = 1) {
     const data1 = await getPopularMovies(page);
     const data2 = await getPopularMovies(page + 1);
 
-    // Combine results to get 21 movies
+    // Pour avoir 21 films affichés
     const movies = [...data1.results, ...data2.results.slice(0, 1)];
 
-    // Clear previous movies
+    // enlevez le contenu précédent
     moviesContainer.innerHTML = "";
 
-    // Render movies
+    // Display des films
+  
     movies.forEach((movie) => {
       const movieCard = `
         <div class="movie-card">
@@ -69,5 +70,4 @@ function updatePagination(current, total) {
   }
 }
 
-// Initial load
 document.addEventListener("DOMContentLoaded", () => displayMovies(currentPage));
