@@ -76,3 +76,17 @@ export async function getAllMovies() {
 
   return allMovies;
 }
+///tous les séries///
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDE5ZDIyMzExNzU1ODdmM2NjYzNhM2Q1NDc4MWI4NSIsIm5iZiI6MTc0NDc4NzUyMi40OTgsInN1YiI6IjY3ZmY1ODQyMzExMGJkODJkZmFkYTFlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LcbZvK40xwQ5C7rYK4S8jPWGF-DZzNWkmpudvAh6E-g'
+  }
+};
+
+fetch('https://api.themoviedb.org/3/trending/tv/day?language=fr-FR', options)
+  .then(res => res.json())
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
